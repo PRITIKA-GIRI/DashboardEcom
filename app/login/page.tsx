@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { z } from "zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
@@ -11,8 +10,11 @@ import { Button } from "@/components/ui/button";
 import { useLogin, useRegister } from "../hooks/useLogin";
 import { LoginFormValues, RegisterFormValues } from "../types/login.types";
 import { loginSchema, registerSchema } from "../schema/loginschema";
+import { useRouter } from "next/navigation";
+
 
 export default function AuthForm() {
+    const router = useRouter(); 
     const [mode, setMode] = useState<"login" | "register">("login");
 
     const loginMutation = useLogin();
@@ -23,8 +25,13 @@ export default function AuthForm() {
     });
 
     const onSubmit = (values: any) => {
+       
         if (mode === "login") {
-            loginMutation.mutate(values);
+            loginMutation.mutate(values, {
+                onSuccess: () => {
+                    router.push("/");
+                },
+            });
         } else {
             registerMutation.mutate(values, {
                 onSuccess: () => {
@@ -43,13 +50,13 @@ export default function AuthForm() {
         (registerMutation.error as Error)?.message;
 
     return (
-        <div className="flex min-h-screen items-center justify-center p-4 bg-[#1B2431]">
+        <div className="flex min-h-screen items-center justify-center p-4 ">
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-4 w-full max-w-md mx-auto p-6 bg-[#273142] rounded-3xl"
+                    className="space-y-4 w-full max-w-md mx-auto p-6 bg-[#b1b1b3] rounded-3xl"
                 >
-                    <h2 className="text-2xl font-bold text-white text-center">
+                    <h2 className="text-2xl font-bold text-[#303b4b] text-center">
                         {mode === "login" ? "Login" : "Register"}
                     </h2>
 
@@ -97,7 +104,7 @@ export default function AuthForm() {
                     {/* Error message */}
                     {error && <p className="text-red-500 text-sm">{error}</p>}
 
-                    <Button type="submit" className="w-full" disabled={isLoading}>
+                    <Button type="submit" className="w-full bg-[#4880FF]" disabled={isLoading}>
                         {isLoading
                             ? mode === "login"
                                 ? "Logging in..."

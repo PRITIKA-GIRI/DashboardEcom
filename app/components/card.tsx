@@ -40,7 +40,7 @@ export const SimpleCard = ({
                 className="absolute right-6 w-[60px] h-[60px] flex justify-center items-center rounded-4xl"
                 style={{ backgroundColor: iconBg }}
             >
-                <Icon size={32} className="text-[#4880FF]" />
+                <Icon size={32} className="text-white" />
             </div>
 
             {/* Footer / Trend */}

@@ -2,10 +2,10 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { User } from "../types/login.types";
 
-
 interface AuthState {
   user: User | null;
-  setUser: (user: User | null) => void;
+  token: string | null;
+  setUser: (user: User, token: string) => void;
   logout: () => void;
 }
 
@@ -13,16 +13,14 @@ export const useAuthStore = create<AuthState>()(
   persist(
     (set) => ({
       user: null,
+      token: null,
 
-      setUser: (user) => set({ user }),
+      setUser: (user, token) => set({ user, token }),
 
-      logout: () => {
-        localStorage.removeItem("token");
-        set({ user: null });
-      },
+      logout: () => set({ user: null, token: null }),
     }),
     {
-      name: "auth-storage",
+      name: "auth-storage", 
     },
   ),
 );

@@ -9,7 +9,7 @@ const DashboardCard = () => {
               title="Total Users"
               description="Total Users"
               icon={FaUsers}
-              iconBg="#FACC15"
+              iconBg="#8280FF"
               trendValue={1.3}
               trendText="Up from last week"
           />
@@ -26,7 +26,7 @@ const DashboardCard = () => {
               title="Revenue"
               description="Total Revenue"
               icon={FaUsers}
-              iconBg="#34D399"
+              iconBg="#FEC53D"
               trendValue={-2.1}
               trendText="Down from last week"
           />
