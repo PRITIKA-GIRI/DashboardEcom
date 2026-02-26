@@ -20,8 +20,20 @@ export default function AuthForm() {
     const loginMutation = useLogin();
     const registerMutation = useRegister();
 
+    const defaultValuesLogin: LoginFormValues = {
+        username: "",
+        password: "",
+    };
+
+    const defaultValuesRegister: RegisterFormValues = {
+        username: "",
+        email: "",
+        password: "",
+    };
+
     const form = useForm<LoginFormValues | RegisterFormValues>({
         resolver: zodResolver(mode === "login" ? loginSchema : registerSchema),
+        defaultValues: mode === "login" ? defaultValuesLogin : defaultValuesRegister,
     });
 
     const onSubmit = (values: any) => {

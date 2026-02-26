@@ -23,9 +23,8 @@ import {
 
 const menuItems = [
     { title: "Dashboard", url: "/", icon: FiHome },
-    { title: "Analytics", url: "/analytics", icon: FiBarChart2 },
-    { title: "Orders", url: "/orders", icon: FiShoppingCart },
-    { title: "Customers", url: "/customers", icon: FiUsers },
+    { title: "Products", url: "/products", icon: FiShoppingCart },
+    { title: "Users", url: "/users", icon: FiUsers },
     { title: "Settings", url: "/settings", icon: FiSettings },
 ]
 
