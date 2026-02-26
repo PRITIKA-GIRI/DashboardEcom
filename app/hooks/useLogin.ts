@@ -1,4 +1,4 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { QUERY_KEYS } from "../lib/query-keys";
 import { useAuthStore } from "../store/authStore";
 import { authService } from "../services/loginService";
@@ -11,7 +11,16 @@ export const useLogin = () => {
     mutationKey: QUERY_KEYS.AUTH.LOGIN,
     mutationFn: authService.login,
     onSuccess: (data) => {
-      setUser(data);
+          setUser(
+            {
+              id: data.id,
+              username: data.username,
+              email: data.email,
+              token: data.token,
+            },
+            data.token,
+          );
+          localStorage.setItem("token", data.token);
     },
   });
 };
@@ -23,7 +32,16 @@ export const useRegister = () => {
     mutationKey: QUERY_KEYS.AUTH.REGISTER,
     mutationFn: authService.register,
     onSuccess: (data) => {
-      setUser(data);
+      setUser(
+        {
+          id: data.id,
+          username: data.username,
+          email: data.email,
+          token: data.token,
+        },
+        data.token,
+      );
+      localStorage.setItem("token", data.token);
     },
   });
 };

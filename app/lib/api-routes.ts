@@ -3,4 +3,5 @@ export const API_ROUTES = {
     LOGIN: "/auth/login",
     REGISTER: "/users",
   },
+  PRODUCTS:"/products",
 };

@@ -4,4 +4,5 @@ export const QUERY_KEYS = {
     LOGIN: ["auth", "login"],
     REGISTER: ["auth", "register"],
   },
+  PRODUCTS:["products"],
 };
