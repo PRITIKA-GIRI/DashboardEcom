@@ -57,8 +57,8 @@ export default function CategoryPieChart() {
                             position="center"
                             content={() => (
                                 <text
-                                    x={150}
-                                    y={150}
+                                    x="50%"
+                                    y="50%"
                                     textAnchor="middle"
                                     dominantBaseline="middle"
                                     fill="white"
@@ -77,10 +77,12 @@ export default function CategoryPieChart() {
                             name,
                         ]}
                         contentStyle={{
-                            color:"white",
+                            backgroundColor: "#1F2937",
                             border: "none",
                             borderRadius: "12px",
                         }}
+                        labelStyle={{ color: "#ffffff" }}   
+                        itemStyle={{ color: "#ffffff" }}
                     />
                 </PieChart>
             </ResponsiveContainer>

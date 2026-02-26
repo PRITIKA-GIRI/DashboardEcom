@@ -11,8 +11,8 @@ const Dashboard = () => {
             <DashboardCard />
             <SalesLineChart />
             <div className='grid grid-cols-2 gap-4'>
-                <CategoryPieChart />
                 <CategoryHorizontalBarChart/>
+                <CategoryPieChart />
             </div>
             
         </div>

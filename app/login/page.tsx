@@ -54,7 +54,7 @@ export default function AuthForm() {
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-4 w-full max-w-md mx-auto p-6 bg-[#b1b1b3] rounded-3xl"
+                    className="space-y-4 w-full max-w-md mx-auto p-6 border-2 rounded-3xl"
                 >
                     <h2 className="text-2xl font-bold text-[#303b4b] text-center">
                         {mode === "login" ? "Login" : "Register"}

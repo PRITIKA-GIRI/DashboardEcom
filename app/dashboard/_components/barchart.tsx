@@ -9,7 +9,6 @@ import {
     YAxis,
     Tooltip,
     ResponsiveContainer,
-    CartesianGrid,
 } from "recharts";
 
 export default function CategoryHorizontalBarChart() {
@@ -47,16 +46,31 @@ export default function CategoryHorizontalBarChart() {
                     data={categoryData}
                     layout="vertical"
                     margin={{ top: 10, right: 30, left: 30, bottom: 5 }}
+                    barGap={0}
                 >
                     <XAxis type="number" stroke="#fff" />
                     <YAxis type="category" dataKey="category" stroke="#fff" />
                     <Tooltip
-                        contentStyle={{ backgroundColor: "#1F2937", border: "none", color: "#fff" }}
+                        cursor={false}
+                        contentStyle={{ backgroundColor: "#1F2937", border: "none", color: "#fff", borderRadius: "12px", }}
+                        itemStyle={{ color: "#fff" }} 
+                        labelStyle={{ color: "#fff" }}
                     />
-                    {/* Bar for number of products */}
-                    <Bar dataKey="count" fill="#4880FF" name="Products" barSize={20} />
-                    {/* Bar for revenue */}
-                    <Bar dataKey="revenue" fill="#FF9F40" name="Revenue ($)" barSize={20} />
+
+                    <Bar
+                        dataKey="count"
+                        fill="#4880FF"
+                        name="Products"
+                        barSize={50}
+                        radius={[0, 8, 8, 0]}
+                    />
+                    <Bar
+                        dataKey="revenue"
+                        fill="#4880FF"
+                        name="Revenue ($)"
+                        barSize={50}
+                        radius={[0, 8, 8, 0]}
+                    />
                 </BarChart>
             </ResponsiveContainer>
         </div>
