@@ -1,4 +1,5 @@
 import { SimpleCard } from '@/app/components/card'
+import { DollarSign } from 'lucide-react'
 import React from 'react'
 import { FaUsers } from 'react-icons/fa6'
 
@@ -6,7 +7,7 @@ const DashboardCard = () => {
   return (
     <div className='grid md:grid-cols-2 xl:grid-cols-4 gap-[30px] w-full'>
           <SimpleCard
-              title="Total Users"
+              title="14"
               description="Total Users"
               icon={FaUsers}
               iconBg="#8280FF"
@@ -15,15 +16,15 @@ const DashboardCard = () => {
           />
 
           <SimpleCard
-              title="Total Products"
+              title="$ 2000"
               description="Total Revenue"
-              icon={FaUsers}
+              icon={DollarSign}
               iconBg="#34D399"
               trendValue={-2.1}
               trendText="Down from last week"
           />
           <SimpleCard
-              title="Revenue"
+              title="450"
               description="Total Revenue"
               icon={FaUsers}
               iconBg="#FEC53D"
@@ -31,7 +32,7 @@ const DashboardCard = () => {
               trendText="Down from last week"
           />
           <SimpleCard
-              title="Revenue"
+              title="180"
               description="Total Revenue"
               icon={FaUsers}
               iconBg="#34D399"

@@ -7,8 +7,8 @@ interface SimpleCardProps {
     description: string;
     icon: IconType;
     iconBg?: string;
-    trendValue?: number;     // Positive = up, Negative = down
-    trendText?: string;      // e.g., "from last week"
+    trendValue?: number;     
+    trendText?: string;   
     className?: string;
 }
 
@@ -37,7 +37,7 @@ export const SimpleCard = ({
 
             {/* Icon */}
             <div
-                className="absolute right-6 w-[60px] h-[60px] flex justify-center items-center rounded-4xl"
+                className="absolute right-6 w-[50px] h-[50px] flex justify-center items-center rounded-3xl"
                 style={{ backgroundColor: iconBg }}
             >
                 <Icon size={32} className="text-white" />
@@ -59,7 +59,6 @@ export const SimpleCard = ({
                             {Math.abs(trendValue)}%
                         </span>
 
-                        {/* Remaining text */}
                         <span className="text-gray-400">{trendText}</span>
                     </div>
                 </CardContent>
