@@ -17,4 +17,9 @@ export const productService = {
         const response = await apiClient.get(`${API_ROUTES.PRODUCTS}/${id}`);
         return response.data;
     },
+
+    createProduct: async (product: Omit<Product, "id">): Promise<Product> => {
+        const response = await apiClient.post(API_ROUTES.PRODUCTS, product);
+        return response.data;
+    },
 };

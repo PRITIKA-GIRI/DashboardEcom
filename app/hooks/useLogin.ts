@@ -2,6 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import { QUERY_KEYS } from "../lib/query-keys";
 import { useAuthStore } from "../store/authStore";
 import { authService } from "../services/loginService";
+import { toast } from "sonner";
 
 
 export const useLogin = () => {
@@ -11,6 +12,7 @@ export const useLogin = () => {
     mutationKey: QUERY_KEYS.AUTH.LOGIN,
     mutationFn: authService.login,
     onSuccess: (data) => {
+      toast.success("Login successful!");
           setUser(
             {
               id: data.id,
