@@ -40,3 +40,42 @@ export const useCreateProduct = () => {
     },
   });
 };
+
+export const useDeleteProduct = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (id: number) => productService.deleteProduct(id),
+
+    onSuccess: () => {
+      toast.success("Product deleted successfully!");
+
+      queryClient.invalidateQueries({ queryKey: ["products"] });
+    },
+
+    onError: () => {
+      toast.error("Failed to delete product");
+    },
+  });
+};
+
+export const useUpdateProduct = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: ({ id, data }: { id: number; data: Partial<Product> }) =>
+      productService.updateProduct(id, data),
+
+    onSuccess: (_, variables) => {
+      toast.success("Product updated successfully!");
+
+      queryClient.invalidateQueries({ queryKey: ["products"] });
+
+      queryClient.invalidateQueries({ queryKey: ["product", variables.id] });
+    },
+
+    onError: () => {
+      toast.error("Failed to update product");
+    },
+  });
+};

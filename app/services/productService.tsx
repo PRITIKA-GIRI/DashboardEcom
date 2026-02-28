@@ -22,4 +22,13 @@ export const productService = {
         const response = await apiClient.post(API_ROUTES.PRODUCTS, product);
         return response.data;
     },
+
+    updateProduct: async (id: number, product: Partial<Product>): Promise<Product> => {
+        const response = await apiClient.put(`${API_ROUTES.PRODUCTS}/${id}`, product);
+        return response.data;
+    },
+
+    deleteProduct: async (id: number): Promise<void> => {
+        await apiClient.delete(`${API_ROUTES.PRODUCTS}/${id}`);
+    },
 };
