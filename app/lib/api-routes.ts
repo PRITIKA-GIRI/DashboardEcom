@@ -5,4 +5,5 @@ export const API_ROUTES = {
   },
   PRODUCTS: "/products",
   CATEGORIES: "/products/category",
+  USERS: "/users",
 };
