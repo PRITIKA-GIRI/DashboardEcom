@@ -9,7 +9,7 @@ export const productService = {
     },
 
     getProductsByCategory: async (category: string): Promise<Product[]> => {
-        const response = await apiClient.get(`${API_ROUTES.PRODUCTS}/${category}`);
+        const response = await apiClient.get(`${API_ROUTES.CATEGORIES}/${category}`);
         return response.data;
     },
 

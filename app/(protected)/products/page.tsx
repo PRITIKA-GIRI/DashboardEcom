@@ -41,7 +41,13 @@ const Products = () => {
         </button>
       </div>
       <div className="flex flex-row-reverse items-center gap-3">
-        <DropdownMenuCategory />
+        <DropdownMenuCategory
+          selectedCategory={selectedCategory}
+          onSelectCategory={(cat) => {
+            setSelectedCategory(cat);
+            setCurrentPage(1); 
+          }}
+        />
         <FiFilter size={25} className="text-white mb-2" />
       </div>
 
