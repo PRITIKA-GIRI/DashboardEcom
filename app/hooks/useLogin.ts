@@ -22,7 +22,7 @@ export const useLogin = () => {
             },
             data.token,
           );
-          localStorage.setItem("token", data.token);
+
     },
   });
 };
@@ -43,7 +43,6 @@ export const useRegister = () => {
         },
         data.token,
       );
-      localStorage.setItem("token", data.token);
     },
   });
 };

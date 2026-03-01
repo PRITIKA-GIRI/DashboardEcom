@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useAuthStore } from "../store/authStore";
 
 export default function ProtectedRoute({ children }: { children: React.ReactNode }) {
-    const token = useAuthStore((s) => s.user?.token);
+    const token = useAuthStore((s) => s.token);
     const router = useRouter();
 
     useEffect(() => {

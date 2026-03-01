@@ -15,17 +15,15 @@ import {
 
 import {
     FiHome,
-    FiBarChart2,
     FiShoppingCart,
     FiUsers,
-    FiSettings,
+    FiLogOut,
 } from "react-icons/fi"
 
 const menuItems = [
     { title: "Dashboard", url: "/", icon: FiHome },
     { title: "Products", url: "/products", icon: FiShoppingCart },
     { title: "Users", url: "/users", icon: FiUsers },
-    { title: "Settings", url: "/settings", icon: FiSettings },
 ]
 
 export function AppSidebar() {

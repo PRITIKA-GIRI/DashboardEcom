@@ -38,9 +38,9 @@ export default function Users() {
 
     if (isLoading) return <p>Loading...</p>;
     return (
-        <div className="flex flex-col gap-[28px]">
+        <div className="flex flex-col gap-[50px]">
 
-            <div className="bg-[#273142] flex flex-col p-8 rounded-2xl">
+            <div className="bg-[#273142] flex flex-col p-6 gap-2 rounded-2xl">
                 <p className="text-[32px] font-semibold text-white">Users</p>
                 <p className="text-[14px] font-regular text-white">View, edit, and delete users.</p>
 
