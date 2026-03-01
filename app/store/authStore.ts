@@ -1,11 +1,12 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { User } from "../types/login.types";
+import { UserLogin } from "../types/login.types";
+
 
 interface AuthState {
-  user: User | null;
+  user: UserLogin | null;
   token: string | null;
-  setUser: (user: User, token: string) => void;
+  setUser: (user: UserLogin, token: string) => void;
   logout: () => void;
 }
 
