@@ -47,7 +47,7 @@ export default function CategoryPieChart() {
                         nameKey="category"
                         innerRadius="55%"
                         outerRadius="100%"
-                        label={({ percent }) => `${(percent * 100).toFixed(1)}%`}
+                        label={({ percent }) => `${(percent??0 * 100).toFixed(1)}%`}
                         labelLine={false}
                     >
                         {categoryData.map((entry, index) => (
@@ -72,8 +72,8 @@ export default function CategoryPieChart() {
 
                     {/* Tooltip for PieChart */}
                     <Tooltip
-                        formatter={(value: number, name: string, props) => [
-                            value,
+                        formatter={(value, name) => [
+                            value ?? 0,
                             name,
                         ]}
                         contentStyle={{

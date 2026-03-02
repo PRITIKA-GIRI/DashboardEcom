@@ -137,7 +137,6 @@ export default function AuthForm() {
                             onClick={() => {
                                 setMode(mode === "login" ? "register" : "login");
                                 form.reset();
-                                setError(null);
                             }}
                         >
                             {mode === "login" ? "Register" : "Login"}
