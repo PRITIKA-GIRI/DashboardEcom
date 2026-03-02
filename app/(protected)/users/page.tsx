@@ -40,43 +40,46 @@ export default function Users() {
     return (
         <div className="flex flex-col gap-[50px]">
 
-            <div className="bg-[#273142] flex flex-col p-6 gap-2 rounded-2xl">
-                <p className="text-[32px] font-semibold text-white">Users</p>
+            <div className="bg-[#273142] flex flex-col p-2 lg:p-6 gap-2 rounded-2xl">
+                <p className="text-[22px] lg:text-[28px] font-semibold text-white">Users</p>
                 <p className="text-[14px] font-regular text-white">View, edit, and delete users.</p>
 
             </div>
-            <table className="w-full  bg-[#273142] text-white rounded-3xl">
-                <thead>
-                    {table.getHeaderGroups().map((headerGroup) => (
-                        <tr key={headerGroup.id}
-                            className='rounded-4xl bg-[#4880FF]'>
-                            {headerGroup.headers.map((header) => (
-                                <th key={header.id} className=" p-2 text-start">
-                                    {flexRender(
-                                        header.column.columnDef.header,
-                                        header.getContext()
-                                    )}
-                                </th>
-                            ))}
-                        </tr>
-                    ))}
-                </thead>
+            <div className=' max-w-[320px] md:max-w-[450px] lg:max-w-full overflow-x-auto rounded-2xl'>
+                <table className="w-full  bg-[#273142] text-white rounded-3xl">
+                    <thead>
+                        {table.getHeaderGroups().map((headerGroup) => (
+                            <tr key={headerGroup.id}
+                                className='rounded-4xl bg-[#4880FF]'>
+                                {headerGroup.headers.map((header) => (
+                                    <th key={header.id} className=" p-2 text-start">
+                                        {flexRender(
+                                            header.column.columnDef.header,
+                                            header.getContext()
+                                        )}
+                                    </th>
+                                ))}
+                            </tr>
+                        ))}
+                    </thead>
 
-                <tbody>
-                    {table.getRowModel().rows.map((row) => (
-                        <tr key={row.id}>
-                            {row.getVisibleCells().map((cell) => (
-                                <td key={cell.id} className=" p-2">
-                                    {flexRender(
-                                        cell.column.columnDef.cell,
-                                        cell.getContext()
-                                    )}
-                                </td>
-                            ))}
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+                    <tbody>
+                        {table.getRowModel().rows.map((row) => (
+                            <tr key={row.id}>
+                                {row.getVisibleCells().map((cell) => (
+                                    <td key={cell.id} className=" p-2">
+                                        {flexRender(
+                                            cell.column.columnDef.cell,
+                                            cell.getContext()
+                                        )}
+                                    </td>
+                                ))}
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            
         </div>
     )
 }

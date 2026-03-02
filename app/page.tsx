@@ -7,9 +7,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 export default function Home() {
   return (
     <ProtectedLayout>
-      <div className="md:hidden mb-4">
-        <SidebarTrigger />
-      </div>
+  
 
       <Dashboard />
     </ProtectedLayout>

@@ -7,10 +7,10 @@ import CategoryPieChart from './_components/piechart'
 const Dashboard = () => {
     return (
         <div className="flex flex-col gap-[28px]">
-            <p className="text-[32px] font-semibold text-white">Dashboard</p>
+            <p className="text-[22px] lg:text-[28px] font-semibold text-white">Dashboard</p>
             <DashboardCard />
             <SalesLineChart />
-            <div className='grid grid-cols-2 gap-4'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
                 <CategoryHorizontalBarChart/>
                 <CategoryPieChart />
             </div>

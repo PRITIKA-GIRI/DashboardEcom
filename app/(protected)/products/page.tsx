@@ -32,8 +32,8 @@ const Products = () => {
   return (
     <div className="flex flex-col gap-[28px]">
 
-      <div className="bg-[#273142] flex justify-between p-8 rounded-2xl">
-        <p className="text-[32px] font-semibold text-white">Products</p>
+      <div className="bg-[#273142] flex justify-between p-4 lg:p-8 rounded-2xl gap-2">
+        <p className="text-[24px] lg:text-[28px] font-semibold text-white">Products</p>
         <button
           onClick={() => setIsModalOpen(true)}
          className="bg-[#4880FF] text-white px-4 py-2 rounded-lg hover:bg-[#3a6bc2] transition-colors">
