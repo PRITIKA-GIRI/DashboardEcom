@@ -127,7 +127,7 @@ export default function AuthForm() {
                     </Button>
 
                     {/* Toggle link */}
-                    <p className="text-center text-sm text-white">
+                    <p className="text-center text-sm text-[#3F3F3F]">
                         {mode === "login"
                             ? "Don't have an account?"
                             : "Already have an account?"}{" "}
