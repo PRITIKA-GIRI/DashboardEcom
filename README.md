@@ -18,3 +18,14 @@ Run locally:
 npm install
 npm run dev
 ```
+
+## 🔐 Demo Access
+
+To explore the dashboard features, use the following test credentials:
+
+- **Username:** mor_2314  
+- **Password:** 83r5^_
+
+These credentials are provided by the Fake Store API.
+
+> ⚠️ Note: Since this project relies on an external API, authentication may fail if the API is unavailable.
