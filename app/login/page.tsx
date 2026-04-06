@@ -11,6 +11,7 @@ import { useLogin, useRegister } from "../hooks/useLogin";
 import { LoginFormValues, RegisterFormValues } from "../types/login.types";
 import { loginSchema, registerSchema } from "../schema/loginschema";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 
 export default function AuthForm() {
@@ -37,11 +38,13 @@ export default function AuthForm() {
     });
 
     const onSubmit = (values: any) => {
-       
         if (mode === "login") {
             loginMutation.mutate(values, {
                 onSuccess: () => {
                     router.push("/");
+                },
+                onError: (err: any) => {
+                    toast.error(err?.message || "Login failed");
                 },
             });
         } else {
@@ -49,6 +52,10 @@ export default function AuthForm() {
                 onSuccess: () => {
                     setMode("login");
                     form.reset();
+                    toast.success("Account created! Please login.");
+                },
+                onError: (err: any) => {
+                    toast.error(err?.message || "Registration failed");
                 },
             });
         }
@@ -112,9 +119,6 @@ export default function AuthForm() {
                             </FormItem>
                         )}
                     />
-
-                    {/* Error message */}
-                    {error && <p className="text-red-500 text-sm">{error}</p>}
 
                     <Button type="submit" className="w-full bg-[#4880FF]" disabled={isLoading}>
                         {isLoading
